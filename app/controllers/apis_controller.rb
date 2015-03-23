@@ -1,6 +1,6 @@
 class ApisController < ApplicationController
 
   def index
-    "Hello"
+    @apis = Api.all
   end
 end

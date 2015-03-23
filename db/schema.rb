@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323211253) do
+ActiveRecord::Schema.define(version: 20150323214958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20150323211253) do
     t.text     "description"
     t.string   "image"
     t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apis", ["permalink"], name: "index_apis_on_permalink", unique: true, using: :btree
+
+  create_table "rates", force: :cascade do |t|
+    t.integer  "api_id"
+    t.integer  "rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
