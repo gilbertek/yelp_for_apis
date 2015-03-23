@@ -1,0 +1,45 @@
+== README
+
+Yelp for APIs:
+Create a website that allows users to submit and rate public APIs. A user should be able to rate an API between 1 and 5 stars.
+
+An API has the following attributes:
+Name
+Description
+Image
+Permalink (unique)
+
+Requirements:
+Ruby 2.x
+Ruby on Rails 3.x or 4.x
+Test models and controllers with RSpec
+
+Bonus:
+Some front end css framework
+Sass
+
+
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
