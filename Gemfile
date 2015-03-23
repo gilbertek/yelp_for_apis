@@ -37,7 +37,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry'
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'rack-test'
   gem 'factory_girl'
 end
