@@ -1,5 +1,19 @@
+<div class="jumbotron">
+    <h3>Yelp for Apis</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsa doloribus unde facilis, eos id, repudiandae consequatur aliquam eius. Totam enim eveniet aut hic cum fugiat voluptas, nesciunt! Quos, dolorum!</p>
+
+    <p><a class="btn btn-primary btn-lg" href="apis/new" role="button">Add new Api &raquo;</a></p>
+</div>
+
 <% if @apis.empty? %>
     <p>Add some apis for reviews</p>
 <% else %>
-
+    <h3>Top rated apis</h3>
+    <table>
+        <% @apis.each do |api| %>
+            <tr>
+                <td><%= api.name %></td>
+            </tr>
+        <% end %>
+    </table>
 <% end %>
