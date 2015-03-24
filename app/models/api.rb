@@ -1,8 +1,6 @@
 class Api < ActiveRecord::Base
 
-  # attr_accessible :name, :description, :permalink, :image
-
-  has_many :rates, autosave: true
+  has_many :rates, inverse_of: :api, autosave: true
 
   accepts_nested_attributes_for :rates, allow_destroy: true
 
@@ -12,4 +10,9 @@ class Api < ActiveRecord::Base
   def has_permalink?
     permalink.present?
   end
+
+  def self.top_rated
+    self.last(10)
+  end
+
 end

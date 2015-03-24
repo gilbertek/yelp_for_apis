@@ -12,7 +12,10 @@
     <table>
         <% @apis.each do |api| %>
             <tr>
+                <td><img src="<%= api.image %>" alt="<%= api.name %>"></td>
                 <td><%= api.name %></td>
+                <td><%= api.permalink %></td>
+                <td><%= link_to 'Update rating', edit_api_path(api) %></td>
             </tr>
         <% end %>
     </table>

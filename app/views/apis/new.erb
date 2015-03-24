@@ -1,5 +1,19 @@
 <div class="row">
+
     <%= form_for @api, url: {action: "create"}, html: {class: "new_api"} do |f| %>
+
+    <% if @api.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@api.errors.count, "error") %> prohibited this api from being saved:</h2>
+
+          <ul>
+          <% @api.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+    <% end %>
+
     <div class="input-group input-group-lg">
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control" %>

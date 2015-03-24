@@ -1,11 +1,15 @@
 class ApisController < ApplicationController
 
   def index
-    @apis = Api.last(10)
+    @apis = Api.top_rated
   end
 
   def new
     @api = Api.new
+  end
+
+  def edit
+    @api = Api.find(params[:id])
   end
 
   def create
@@ -21,7 +25,17 @@ class ApisController < ApplicationController
     end
   end
 
-  # private
+  def update
+    @api = Api.find(params[:id])
+    if @api.rates.create(rate_params).save
+      flash[:success] = "Api added successfully."
+      redirect_to apis_path
+    else
+      render :edit
+    end
+  end
+
+  private
     def api_params
       params.require(:api).permit(:name, :description, :permalink, :image, :rates_attributes => [:api_id, :rate, :id, :_destroy])
     end

@@ -1,0 +1,35 @@
+<%= form_for @api, url: {action: "update"}, html: {class: "update_api"} do |f| %>
+
+<div class="input-group input-group-lg">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", disabled: true %>
+</div>
+
+<div class="input-group input-group-lg">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", disabled: true %>
+</div>
+
+<div class="input-group input-group-lg">
+    <%= f.label :permalink %>
+
+    <%= f.text_field :permalink, class: "form-control", disabled: true %>
+</div>
+
+<div class="input-group input-group-lg">
+    <%= f.label :image %>
+
+    <%= f.text_field :image, class: "form-control", disabled: true %>
+</div>
+
+<div class="input-group input-group-lg">
+    <%= fields_for :rates do |rate| %>
+        <%= rate.label :rate %>
+        <%= rate.text_field :rate, class: "form-control", placeholder: "Add a number between 1 and 5" %>
+    <% end %>
+</div>
+
+<div class="input-group input-group-lg">
+    <%= f.submit "Create", class: "btn btn-default btn-primary"  %>
+</div>
+<% end %>
