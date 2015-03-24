@@ -1,6 +1,5 @@
 <div class="jumbotron">
     <h3>Yelp for Apis</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsa doloribus unde facilis, eos id, repudiandae consequatur aliquam eius. Totam enim eveniet aut hic cum fugiat voluptas, nesciunt! Quos, dolorum!</p>
 
     <p><a class="btn btn-primary btn-lg" href="apis/new" role="button">Add new Api &raquo;</a></p>
 </div>
@@ -9,14 +8,25 @@
     <p>Add some apis for reviews</p>
 <% else %>
     <h3>Top rated apis</h3>
-    <table>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th data-field="id">Image</th>
+            <th data-field="name">Name</th>
+            <th data-field="rating">Average Rating</th>
+            <th data-field="link">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
         <% @apis.each do |api| %>
             <tr>
                 <td><img src="<%= api.image %>" alt="<%= api.name %>"></td>
                 <td><%= api.name %></td>
-                <td><%= api.permalink %></td>
+                <td><%= api.average_rating %></td>
                 <td><%= link_to 'Update rating', edit_api_path(api) %></td>
             </tr>
         <% end %>
+    </tbody>
+
     </table>
 <% end %>

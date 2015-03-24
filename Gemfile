@@ -22,8 +22,10 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rack-test'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end

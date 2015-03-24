@@ -15,6 +15,10 @@ class Api < ActiveRecord::Base
     name.present?
   end
 
+  def average_rating
+    self.class.where(:id => self.id).joins(:rates).average(:rate)
+  end
+
   def self.top_rated
     self.last(10)
   end
