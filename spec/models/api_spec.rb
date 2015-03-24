@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'byebug'
 
 describe Api, type: :model do
 
@@ -7,7 +8,7 @@ describe Api, type: :model do
       :name => "Test",
       :description => 'This is a test api',
       :image => 'http://placeholder.com/24x24',
-      :permalink => 'http://localhost.com/api/v1/tests'
+      :permalink => 'http://localhost.com/api/v1/tests',
     )
   }
 
