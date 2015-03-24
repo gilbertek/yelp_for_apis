@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ApisController, type: :controller do
+describe ApisController, type: :controller do
 
   describe "GET index page" do
     it "should get the list of apis" do
@@ -8,6 +8,4 @@ RSpec.describe ApisController, type: :controller do
       expect(response.status).to be 200
     end
   end
-
-
 end
