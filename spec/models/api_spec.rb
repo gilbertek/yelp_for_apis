@@ -13,7 +13,6 @@ describe Api, type: :model do
 
   describe "it has a permalink" do
     subject { api.has_permalink? }
-
     context "when api has a permalink" do
       it { should eq true }
     end
@@ -25,4 +24,10 @@ describe Api, type: :model do
   end
 
 
+  describe "it has a valid name" do
+    subject { api.has_name? }
+    context "when api has a valid name" do
+      it { should eq true }
+    end
+  end
 end

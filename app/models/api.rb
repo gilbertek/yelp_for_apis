@@ -11,6 +11,10 @@ class Api < ActiveRecord::Base
     permalink.present?
   end
 
+  def has_name?
+    name.present?
+  end
+
   def self.top_rated
     self.last(10)
   end
