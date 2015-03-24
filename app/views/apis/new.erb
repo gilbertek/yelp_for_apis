@@ -1,6 +1,8 @@
 <div class="row">
 
-    <%= form_for @api, url: {action: "create"}, html: {class: "new_api"} do |f| %>
+    <h3>Add new Api</h3>
+
+    <%= form_for @api, url: {action: "create"}, html: {class: "new_api", role: "form"} do |f| %>
 
     <% if @api.errors.any? %>
         <div id="error_explanation">
@@ -14,37 +16,37 @@
         </div>
     <% end %>
 
-    <div class="input-group input-lg">
+    <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control" %>
     </div>
 
-    <div class="input-group input-group-lg">
+    <div class="form-group">
         <%= f.label :description %>
         <%= f.text_area :description, class: "form-control"  %>
     </div>
 
-    <div class="input-group input-group-lg">
+    <div class="form-group">
         <%= f.label :permalink %>
 
         <%= f.text_field :permalink, class: "form-control"  %>
     </div>
 
-    <div class="input-group input-group-lg">
+    <div class="form-group">
         <%= f.label :image %>
 
         <%= f.text_field :image, class: "form-control" %>
     </div>
 
-    <div class="input-group input-group-lg">
+    <div class="form-group">
         <%= fields_for :rates do |rate| %>
             <%= rate.label :rate %>
             <%= rate.text_field :rate, class: "form-control", placeholder: "Add a number between 1 and 5" %>
         <% end %>
     </div>
 
-    <div class="input-group input-group-lg">
-        <%= f.submit "Create", class: "btn btn-default btn-primary"  %>
+    <div class="form-group">
+        <%= f.submit "Create", class: "btn btn-default btn-primary btn-lg" %>
     </div>
 
     <% end %>
